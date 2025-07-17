@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container" role="main">
+        <h1 id="loginTitle">로그인</h1>
+        <form id="loginForm" aria-labelledby="loginTitle" autocomplete="on">
+            <div class="form-group">
+                <label for="userId">아이디 <span aria-hidden="true" style="color:red;">*</span></label>
+                <input type="text" id="userId" name="userId" placeholder="아이디 (admin)" required aria-required="true" aria-label="아이디" autocomplete="username" style="margin-bottom:12px;">
+            </div>
+            <div class="form-group">
+                <label for="userPw">비밀번호 <span aria-hidden="true" style="color:red;">*</span></label>
+                <input type="password" id="userPw" name="userPw" placeholder="비밀번호 (admin)" required aria-required="true" aria-label="비밀번호" autocomplete="current-password" style="margin-bottom:12px;">
+            </div>
+            <button type="submit" aria-label="로그인" tabindex="0">로그인</button>
+        </form>
+    </main>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const id = document.getElementById('userId').value;
+            const pw = document.getElementById('userPw').value;
+            if(id === 'admin' && pw === 'admin') {
+                localStorage.setItem('isLoggedIn', 'true');
+                window.location.href = 'reservation.html';
+            } else {
+                alert('아이디 또는 비밀번호가 올바르지 않습니다.\n기본값은 admin/admin 입니다.');
+            }
+        });
+    </script>
+</body>
+</html> 

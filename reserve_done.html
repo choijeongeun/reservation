@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>예약 완료</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container" role="main">
+        <h1 id="doneTitle">예약이 완료되었습니다!</h1>
+        <button id="payBtn" type="button" aria-label="결제하기" style="margin-bottom:20px;">결제하기</button>
+        <section class="wait-list" aria-labelledby="waitListTitle" style="margin: 24px 0;">
+            <h2 id="waitListTitle" style="font-size:18px;">결제대기목록</h2>
+            <ul>
+                <li>예약번호: 2024-001 | 객실 A | 2024-07-01 | 100,000원</li>
+                <li>예약번호: 2024-002 | 스파 | 2024-07-02 | 50,000원</li>
+            </ul>
+        </section>
+        <button id="continueBtn" type="button" aria-label="계속 예약">계속 예약</button>
+    </main>
+    <script>
+        document.getElementById('continueBtn').onclick = function() {
+            window.location.href = 'reservation.html';
+        };
+        document.getElementById('payBtn').onclick = function() {
+            alert('결제 기능은 준비 중입니다.');
+        };
+    </script>
+</body>
+</html> 
